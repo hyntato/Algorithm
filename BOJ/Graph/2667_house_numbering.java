@@ -22,7 +22,7 @@ public class HouseNumbering {
 		for(int i=0; i<n; i++) {
 			for(int j=0; j<n; j++) {
 				if(!visited[i][j] && map[i][j]==1) {
-					list.add(dfs(i, j, ++num));  // 단지별 집의 e
+					list.add(dfs(i, j, ++num));  // 단지별 집의 수
 				}
 			}
 		}
