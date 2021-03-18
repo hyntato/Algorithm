@@ -11,10 +11,11 @@ public class HouseNumbering {
 	private static int[] dx = {1, -1, 0, 0};
 	private static int[] dy = {0, 0, -1, 1};
 	
+	private static int n;
 	private static int[][] map;
 	private static boolean[][] visited;
 	
-	private static void numbering(int n) {
+	private static void numbering() {
 
 		List<Integer> list = new ArrayList<Integer>();
 		int num = 0;
@@ -45,8 +46,8 @@ public class HouseNumbering {
 			int nx = x + dx[i];
 			int ny = y + dy[i];
 			
-			if(0<=nx && nx<visited.length && 0<=ny && ny<visited.length) {
-				if(!visited[nx][ny] && map[nx][ny] == 1) {
+			if(0<=nx && nx<n && 0<=ny && ny<n) {
+				if(!visited[nx][ny] && map[nx][ny]==1) {
 					map[nx][ny] = num;
 					count += dfs(nx, ny, num);
 				}
@@ -60,7 +61,7 @@ public class HouseNumbering {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-		int n = Integer.parseInt(br.readLine());
+		n = Integer.parseInt(br.readLine());
 		map = new int[n][n];
 		visited = new boolean[n][n];
 
@@ -71,7 +72,7 @@ public class HouseNumbering {
 			}
 		}
 
-		numbering(n);
+		numbering();
 	}
 
 }
