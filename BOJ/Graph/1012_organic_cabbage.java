@@ -34,7 +34,7 @@ public class OrganicCabbage {
 			int nx = x + dx[i];
 			int ny = y + dy[i];
 			
-			if(0<=nx && nx<map.length && 0<=ny && ny<map[0].length) {
+			if(0<=nx && nx<n && 0<=ny && ny<m) {
 				if(!visited[nx][ny] && map[nx][ny]==1) {
 					dfs(nx, ny);
 				}
