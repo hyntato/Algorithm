@@ -37,8 +37,7 @@ public class Virus {
 			st = new StringTokenizer(br.readLine());
 			int u = Integer.parseInt(st.nextToken());
 			int v = Integer.parseInt(st.nextToken());
-			network[u][v] = 1;
-			network[v][u] = 1;
+			network[u][v] = network[v][u] = 1;
 		}
 		
 		System.out.println(dfs(1) - 1);
