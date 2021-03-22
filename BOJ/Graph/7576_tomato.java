@@ -85,5 +85,4 @@ class Tomato {
 	public int getX() { return x; }
 	public int getY() { return y; }
 	public int getDay() { return day; }
-	public void setDay(int day) { this.day = day; }
 }
