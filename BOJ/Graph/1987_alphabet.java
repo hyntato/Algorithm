@@ -15,8 +15,6 @@ public class Alphabet {
 	
 	private static void dfs(int x, int y, int count) {
 		count++;
-		visited[board[x][y]-'A'] = true;
-    
 		max = (max < count) ? count : max;
 		
 		for(int i=0; i<4; i++) {
@@ -25,11 +23,12 @@ public class Alphabet {
 			
 			if(0<=nx && nx<r && 0<=ny && ny<c) {
 				if(!visited[board[nx][ny]-'A']) {
+					visited[board[nx][ny]-'A'] = true;
 					dfs(nx, ny, count);
+					visited[board[nx][ny]-'A'] = false;
 				}
 			}
 		}
-		visited[board[x][y]-'A'] = false;
 	}
 	
 	public static void main(String[] args) throws IOException {
@@ -45,12 +44,9 @@ public class Alphabet {
 		visited = new boolean[26];
 
 		for(int i=0; i<r; i++) {
-			char[] chars = br.readLine().toCharArray();
-			for(int j=0; j<c; j++) {
-				board[i][j] = chars[j];
-			}
+			board[i] = br.readLine().toCharArray();
 		}
-		
+		visited[board[0][0]-'A'] = true;
 		dfs(0, 0, 0);
 		System.out.println(max);
 	}
