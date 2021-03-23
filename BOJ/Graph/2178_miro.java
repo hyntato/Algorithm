@@ -32,7 +32,6 @@ public class Miro {
 				
 				if(0<=nx && nx<n && 0<=ny && ny<m) {
 					if(!visited[nx][ny] && miro[nx][ny]==1) {
-						
 						q.offer(new Point(nx, ny));
 						visited[nx][ny] = true;
 						miro[nx][ny] = miro[p.x][p.y] + 1;
@@ -55,9 +54,9 @@ public class Miro {
 		visited = new boolean[n][m];
 		
 		for(int i=0; i<n; i++) {
-			char[] chars = br.readLine().toCharArray();
+			String s = br.readLine();
 			for(int j=0; j<m; j++) {
-				miro[i][j] = chars[j] - '0';
+				miro[i][j] = s.charAt(j) - '0';
 			}
 		}
 		
