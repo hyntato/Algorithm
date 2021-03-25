@@ -44,6 +44,6 @@ public class Triangle {
 			max = (max < triangle[n-1][i]) ? triangle[n-1][i] : max;
 		}
 		System.out.println(max);
-    */
+    		*/
 	}
 }
