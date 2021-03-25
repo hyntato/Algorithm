@@ -19,7 +19,7 @@ public class Triangle {
 			}
 		}
 		
-		// 아래층에서 위층으로 올라가면서 최대값 계산
+		// 아래층에서 위층으로 올라가면서 최댓값 계산
 		for(int i=n-2; i>=0; i--) {
 			for(int j=0; j<=i; j++) {
 				triangle[i][j] += Math.max(triangle[i+1][j], triangle[i+1][j+1]);
@@ -27,8 +27,8 @@ public class Triangle {
 		}
 		System.out.println(triangle[0][0]);
    
-    /* // 위층에서 아래층으로 내려가면서 최대값 계산
-    for(int i=1; i<n; i++) {
+    		/* // 위층에서 아래층으로 내려가면서 최댓값 계산
+    		for(int i=1; i<n; i++) {
 			for(int j=0; j<=i; j++) {
 				if(j == 0)
 					triangle[i][j] += triangle[i-1][0];
