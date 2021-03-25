@@ -25,12 +25,12 @@ public class Fibonacci5 {
 		System.out.println(fibo(n));
 		
 		/*
-    // 반복문
+    		// 반복문
 		for(int i=2; i<=n; i++) {
 			dp[i] = dp[i-1] + dp[i-2];
 		}
-    System.out.println(dp[n]);
-    */
+    		System.out.println(dp[n]);
+    		*/
 	}
 
 }
