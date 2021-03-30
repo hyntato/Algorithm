@@ -13,7 +13,7 @@ public class LostParentheses {
 		// 첫 "-" 연산자의 피연산자 계산
 		int sum = 0;
 		StringTokenizer add = new StringTokenizer(sub.nextToken(), "+");
-		while(add.hasMoreElements()) {
+		while(add.hasMoreTokens()) {
 			sum += Integer.parseInt(add.nextToken());
 		}
 		
