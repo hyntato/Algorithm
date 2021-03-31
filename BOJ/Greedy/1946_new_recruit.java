@@ -23,7 +23,7 @@ public class NewRecruit {
 				ranking[j][1] = Integer.parseInt(st.nextToken());				
 			}
 			
-			// 서류 심사 순위 기준 오름차순 정렬
+			// 서류심사 순위 기준 오름차순 정렬
 			Arrays.sort(ranking, new Comparator<int[]>() {
 				@Override
 				public int compare(int[] o1, int[] o2) {
@@ -32,10 +32,10 @@ public class NewRecruit {
 			});
 			
 			int count = 1;
-			int min = ranking[0][1];  // 서류 심사 1등의 면접 순위
+			int min = ranking[0][1];  // 서류심사 1등의 면접 순위
 			
 			for(int j=1; j<n; j++) {
-				// 서류 심사 순위가 높은 사람들보다 면접 순위가 높아야 뽑힘
+				// 서류심사 순위가 높은 사람들보다 면접 순위가 높아야 뽑힘
 				if(ranking[j][1] < min) {
 					count++;
 					min = ranking[j][1];
