@@ -1,4 +1,4 @@
-class Solution {
+class StockPrice {
     
     public int[] solution(int[] prices) {
         int len = prices.length;
