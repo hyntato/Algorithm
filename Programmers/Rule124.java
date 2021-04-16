@@ -1,4 +1,4 @@
-class Solution {
+class Rule124 {
     
     public String solution(int n) {
         String[] nums = {"4", "1", "2"};
