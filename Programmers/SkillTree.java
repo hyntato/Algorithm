@@ -1,4 +1,4 @@
-class Solution {
+class SkillTree {
     
     public int solution(String skill, String[] skill_trees) {
         int count = 0;
