@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Solution {
+class Printer {
     public int solution(int[] priorities, int location) {
         // 또는 큐로 구현
         List<Integer> documents = new ArrayList<>();
