@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Solution {
+class FunctionDevelop {
     public int[] solution(int[] progresses, int[] speeds) {
         
         List<Integer> deployList = new ArrayList<>();
@@ -35,7 +35,7 @@ class Solution {
 /*
 class Solution {
     public int[] solution(int[] progresses, int[] speeds) {
-        
+    
         List<Integer> deployList = new ArrayList<>();
         int day = 0;
         
