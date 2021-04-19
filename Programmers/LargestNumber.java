@@ -1,10 +1,10 @@
 import java.util.*;
 
-class Solution {
+class LargestNumber {
     
     public String solution(int[] numbers) {
+        
         String[] nums = new String[numbers.length];
-      
         for(int i=0; i<nums.length; i++) {
             nums[i] = Integer.toString(numbers[i]);
         }
