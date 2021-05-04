@@ -36,7 +36,7 @@ class GemShopping {
                 }
             }
             end++;
-        }
+        } 
         
         answer[0] = minStart+1;
         answer[1] = answer[0]+min;
