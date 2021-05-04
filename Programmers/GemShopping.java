@@ -22,23 +22,23 @@ class GemShopping {
             if(map.size() == set.size()) {
                 // start 조절
                 while(start <= end) {
-                    if(map.get(gems[start]) > 1) {
-                        map.put(gems[start], map.get(gems[start]) - 1);
+                    map.put(gems[start], map.get(gems[start]) - 1);
+                    if(map.get(gems[start]) == 0) {
+                        map.remove(gems[start]);
                         start++;
-                    }
-                    else {
                         break;
                     }
+                    start++;
                 }
-                if(min > end-start) {
-                    min = end-start;
+                if(min > end-start+1) {
+                    min = end-start+1;
                     minStart = start;
                 }
             }
             end++;
-        } 
+        }
         
-        answer[0] = minStart+1;
+        answer[0] = minStart;
         answer[1] = answer[0]+min;
         return answer;
     }
