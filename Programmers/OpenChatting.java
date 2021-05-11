@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Solution {
+class OpenChatting {
     public String[] solution(String[] record) {
         Map<String, String> actions = new HashMap<>();
         actions.put("Enter", "님이 들어왔습니다.");
