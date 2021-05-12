@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Solution {
+class MaxMin {
     public String solution(String s) {
         String[] sArr = s.split(" ");
         int[] nArr = new int[sArr.length];
