@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Expression {
+class MaxExpression {
     private String ep;
     private long max = 0;
     
