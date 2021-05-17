@@ -10,7 +10,6 @@ class Nlcm {
     }
     
     // 최대공약수 - 유클리드 호제법
-    // a를 b로 나눈 나머지가 0일 때의 b가 최대 공약수
     public int gcd(int a, int b) {
         while (b != 0) {
             int tmp = a;
