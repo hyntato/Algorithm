@@ -1,4 +1,4 @@
-class BiggestRect {
+class BiggestSquare {
     public int solution(int [][]board) {
         if (board.length < 2 || board[0].length < 2) return 1;
         
