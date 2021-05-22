@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Bracket {
+class CorrectBracket {
     public boolean solution(String s) {
         Stack<Character> stack = new Stack<>();
       
