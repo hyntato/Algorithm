@@ -1,6 +1,6 @@
 import java.util.*;
 
-class LargestNumber {
+class MaxNumber {
     
     public String solution(int[] numbers) {
         
