@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Solution {
+class FarNode {
     public int solution(int n, int[][] edge) {
         List<Integer>[] list = new ArrayList[n+1];
         
