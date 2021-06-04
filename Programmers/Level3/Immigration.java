@@ -8,7 +8,7 @@ class Immigration {
         
         while(start <= end) {
             long mid = (start + end) / 2;
-            if(countPassed(mid, times) < n)
+            if(passedPeople(mid, times) < n)
                 start = mid + 1;
             else
                 end = mid - 1;
@@ -16,7 +16,7 @@ class Immigration {
         return start;
     }
     
-    public long countPassed(long mid, int[] times) {
+    public long passedPeople(long mid, int[] times) {
         long count = 0;
         for(int time: times) {
             count += mid / time;
