@@ -14,8 +14,8 @@ class Traffic {
         
         int answer = 0;
         for(int i=0; i<lines.length; i++) {
-            int cnt1 = countTraffic(starts[i], 1000);
-            int cnt2 = countTraffic(ends[i], 1000);
+            int cnt1 = countTraffic(starts[i], 999);
+            int cnt2 = countTraffic(ends[i], 999);
             answer = Math.max(answer, Math.max(cnt1, cnt2));
         }
         return answer;
@@ -30,16 +30,16 @@ class Traffic {
         return end;
     }
     public int makePcToMilli(String str) {
-        int process = (int)(Double.parseDouble(str.replace("s", "")) * 1000);
-        return process;
+        int pc = (int)(Double.parseDouble(str.replace("s", "")) * 1000);
+        return pc;
     }
     
     public int countTraffic(int point, int len) {
         int cnt = 0;
         for(int i=0; i<starts.length; i++) {  
-            if(point <= starts[i] && starts[i] < point+len 
-               || point <= ends[i] && ends[i] < point+len
-               || starts[i] <= point && point+len <= ends[i])
+            if(point <= starts[i] && starts[i] <= point+len 
+               || point <= ends[i] && ends[i] <= point+len
+               || starts[i] < point && point+len < ends[i])
                 cnt++;
         }
         return cnt;
