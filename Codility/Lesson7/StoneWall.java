@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Solution {
+class StoneWall {
     public int solution(int[] H) {
         Stack<Integer> stack = new Stack<>();
         int count = 0;
