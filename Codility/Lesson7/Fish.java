@@ -15,7 +15,9 @@ class Fish {
                     while(!stack.isEmpty() && stack.peek() < A[i]) {
                         stack.pop();
                     }
-                    if(stack.isEmpty()) upCnt++;
+                    if(stack.isEmpty()) {
+                        upCnt++;
+                    }
                 }
             }
         }
