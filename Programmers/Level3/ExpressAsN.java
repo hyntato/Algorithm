@@ -19,7 +19,7 @@ class ExpressAsN {
           
             // 2. dp[j]와 dp[i-j] 사칙연산
             for(int j=1; j<i; j++) {
-                doOperation(i, j, N);
+                doOperation(i, j);
             }
             
             // 3. N을 i개 사용하여 number를 표현하면 break
@@ -31,7 +31,7 @@ class ExpressAsN {
         return answer;
     }
     
-    public void doOperation(int i, int j, int N) {
+    public void doOperation(int i, int j) {
         Set<Integer> set1 = dp[j];
         Set<Integer> set2 = dp[i-j];
         
