@@ -1,4 +1,4 @@
-class CollectSticker {
+class CollectSticker2 {
     public int solution(int[] sticker) {
         int N = sticker.length;
         if(N == 1) return sticker[0];
