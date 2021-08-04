@@ -10,7 +10,7 @@ public class Gear {
 	private static int L = 6;
 	private static int R = 2;
   
-  private static void left(int num, int dir) {
+  	private static void left(int num, int dir) {
 		if(0<=num && (gear[num+1].get(L) != gear[num].get(R))) {
 			left(num-1, -dir);
 			rotate(num, dir);
