@@ -70,7 +70,7 @@ public class Tetromino {
 				visited[i][j] = true;
 				dfs(i, j, 1, map[i][j]);  // ㅗ모양 빼고 탐색
 				visited[i][j] = false;
-				checkException(i, j);	    // ㅗ모양 탐색
+				checkException(i, j);	  // ㅗ모양 탐색
 			}
 		}
 		System.out.println(max);
