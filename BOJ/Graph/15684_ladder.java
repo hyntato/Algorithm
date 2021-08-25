@@ -8,7 +8,7 @@ public class Ladder {
 	private static boolean success;
 	private static boolean[][] map;
 	
-	private static void combination(int x, int y, int cnt) {
+	private static void combination(int x, int cnt) {
 		if(cnt == 0) {
 			boolean check = true;
 			for(int i=1; i<=N; i++) {
@@ -26,7 +26,7 @@ public class Ladder {
 			for(int j=1; j<N; j++) {
 				if(!map[i][j] && !map[i][j-1] && !map[i][j+1]) {
 					map[i][j] = true;
-					combination(i, j+1, cnt-1);
+					combination(i, cnt-1);
 					map[i][j] = false;
 				}
 			}
@@ -65,7 +65,7 @@ public class Ladder {
 		int answer = -1;
 		
 		for(int i=0; i<=3; i++) {
-			combination(1, 1, i);
+			combination(1, i);
 			if(success) {
 				answer = i;
 				break;
