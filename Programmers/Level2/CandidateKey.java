@@ -1,69 +1,62 @@
 import java.util.*;
 
 class CandidateKey {
-    public int solution(String[][] relation) {
-        int answer = 0;
-        int N = relation[0].length;
-        List<List<String>> cList = new ArrayList<>();
-        
-        for(int i=0; i<N; i++) {
-            List<String> list = new ArrayList<>();
-            boolean[] visited = new boolean[N];
-            combination(N, i+1, 0, visited, "", list);
-            cList.add(list);
-        }
+    private List<String> cases = new ArrayList<>();
+    private List<String> candidates = new ArrayList<>();
     
-        for(int i=0; i<N; i++) {
-            List<String> list = cList.get(i);
-            for(int j=0; j<list.size(); j++) {
-                if(isCandidateKey(list.get(j), relation)) {
-                    answer++;
-                    removeKey(cList, i+1, list.get(j));
-                }
+    public int solution(String[][] relation) {
+        int n = relation[0].length;
+        // 모든 컬럼 조합 구하기
+        for(int i=0; i<n; i++) {
+            combination(n, i+1, 0, new boolean[n], "");
+        }
+        
+        // case에 따라 데이터 조합 -> 중복, 최소 체크
+        for(String currCase: cases) {
+            if(isUnique(currCase, relation) && isMinimal(currCase)) {
+                candidates.add(currCase);
             }
         }
-        return answer;
+        return candidates.size();
     }
     
-    public void combination(int n, int r, int start, boolean[] visited, String key, List<String> list) {
+    public void combination(int n, int r, int start, boolean[] visited, String acc) {
         if(r == 0) {
-            list.add(key);
+            cases.add(acc);
             return;
         }
         for(int i=start; i<n; i++) {
             if(!visited[i]) {
                 visited[i] = true;
-                combination(n, r-1, i+1, visited, key+i, list);
+                combination(n, r-1, i+1, visited, acc+i);
                 visited[i] = false;
             }
         }
     }
     
-    public boolean isCandidateKey(String key, String[][] relation) {
-        List<String> list = new ArrayList<>();
-        
-        for(int i=0; i<relation.length; i++) {
-            String tmp = "";
-            for(int j=0; j<relation[0].length; j++) {
-                if(key.contains(j+"")) tmp += relation[i][j];
+    public boolean isUnique(String currCase, String[][] relation) {
+        Set<String> set = new HashSet<>();
+        for(String[] row: relation) {
+            String result = "";
+            for(char idx: currCase.toCharArray()) {
+                result += row[Integer.parseInt(idx+"")];
             }
-            if(list.contains(tmp))
+            if(!set.add(result)) {
                 return false;
-            else
-                list.add(tmp);
+            }
         }
         return true;
     }
     
-    public void removeKey(List<List<String>> cList, int start, String key) {
-        for(int i=start; i<cList.size(); i++) {
-            List<String> list = cList.get(i);
-            Iterator iter = list.iterator();
-            while(iter.hasNext()) {
-                String str = (String)iter.next();
-                if(str.length() - str.replaceAll("[" + key + "]", "").length() == key.length())
-                    iter.remove();
+    public boolean isMinimal(String currCase) {
+        for(String candidate: candidates) {
+            // 02, 012 주의 -> contains로 비교하면 안됨
+            String regExp = "[" + candidate + "]";
+            if(currCase.length() - currCase.replaceAll(regExp, "").length() == candidate.length()) {
+                return false;
             }
         }
+        return true;
     }
 }
+
